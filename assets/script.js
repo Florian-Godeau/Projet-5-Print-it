@@ -25,7 +25,9 @@ const tagLine = document.querySelector("#banner p");
 let currentSlide = 0;
 
 arrowLeft.addEventListener("click", function() {
-	if (currentSlide > 0) {
+	if (currentSlide === 0) {
+		currentSlide = 3;
+	} else {	
     currentSlide --;
 	}
 
@@ -41,7 +43,9 @@ arrowLeft.addEventListener("click", function() {
 });
 
 arrowRight.addEventListener("click", function() {
-	if (currentSlide < 3) {
+	if (currentSlide === 3) {
+		currentSlide = 0;
+	 } else { 	
     currentSlide ++;
 	}
 
