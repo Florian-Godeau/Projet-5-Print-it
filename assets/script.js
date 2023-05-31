@@ -27,27 +27,33 @@ let currentSlide = 0;
 arrowLeft.addEventListener("click", function() {
 	if (currentSlide > 0) {
     currentSlide --;
-	console.log(currentSlide)
 	}
 
 	const imagePath = "./assets/images/slideshow/" + slides[currentSlide].image;
 	const taglineContent = slides[currentSlide].tagLine;
-
 	document.querySelector(".banner-img").src = imagePath;
 	tagLine.innerHTML = taglineContent;
+
+	const dotSelected = bulletPoints.querySelector(".dot_selected");
+	const nextDot = bulletPoints.children[currentSlide];
+	dotSelected.classList.remove("dot_selected");
+	nextDot.classList.add("dot_selected");
 });
 
 arrowRight.addEventListener("click", function() {
 	if (currentSlide < 3) {
     currentSlide ++;
-	console.log(currentSlide);
 	}
 
 	const imagePath = "./assets/images/slideshow/" + slides[currentSlide].image;
 	const taglineContent = slides[currentSlide].tagLine;
-
 	document.querySelector(".banner-img").src = imagePath;
 	tagLine.innerHTML = taglineContent;
+
+	const dotSelected = bulletPoints.querySelector(".dot_selected");
+	const nextDot = bulletPoints.children[currentSlide];
+	dotSelected.classList.remove("dot_selected");
+	nextDot.classList.add("dot_selected");
 	
 });
 
