@@ -20,13 +20,35 @@ const slides = [
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
 const bulletPoints = document.querySelector(".dots")
+const tagLine = document.querySelector("#banner p");
+
+let currentSlide = 0;
 
 arrowLeft.addEventListener("click", function() {
-    console.log("clic sur la flèche gauche");
+	if (currentSlide > 0) {
+    currentSlide --;
+	console.log(currentSlide)
+	}
+
+	const imagePath = "./assets/images/slideshow/" + slides[currentSlide].image;
+	const taglineContent = slides[currentSlide].tagLine;
+
+	document.querySelector(".banner-img").src = imagePath;
+	tagLine.innerHTML = taglineContent;
 });
 
 arrowRight.addEventListener("click", function() {
-    alert("clic sur la flèche droite");
+	if (currentSlide < 3) {
+    currentSlide ++;
+	console.log(currentSlide);
+	}
+
+	const imagePath = "./assets/images/slideshow/" + slides[currentSlide].image;
+	const taglineContent = slides[currentSlide].tagLine;
+
+	document.querySelector(".banner-img").src = imagePath;
+	tagLine.innerHTML = taglineContent;
+	
 });
 
 for (let i = 0; i < slides.length; i++) {
