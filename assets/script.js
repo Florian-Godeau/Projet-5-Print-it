@@ -19,6 +19,7 @@ const slides = [
 
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
+const bulletPoints = document.querySelector(".dots")
 
 arrowLeft.addEventListener("click", function() {
     console.log("clic sur la flèche gauche");
@@ -27,3 +28,14 @@ arrowLeft.addEventListener("click", function() {
 arrowRight.addEventListener("click", function() {
     alert("clic sur la flèche droite");
 });
+
+for (let i = 0; i < slides.length; i++) {
+	const dot = document.createElement("span");
+	dot.classList.add("dot");
+
+	if (i === 0) {
+		dot.classList.add("dot_selected");
+	}
+
+	bulletPoints.appendChild(dot);
+}
