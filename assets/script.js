@@ -50,6 +50,11 @@ for (let i = 0; i < slides.length; i++) {
 		dot.classList.add("dot_selected");
 	}
 
+	dot.addEventListener("click", function() {
+		currentSlide = i;
+		updateSlide();
+	})
+
 	bulletPoints.appendChild(dot);
 }
 
