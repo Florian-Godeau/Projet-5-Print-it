@@ -30,16 +30,7 @@ arrowLeft.addEventListener("click", function() {
 	} else {	
     currentSlide --;
 	}
-
-	const imagePath = "./assets/images/slideshow/" + slides[currentSlide].image;
-	const taglineContent = slides[currentSlide].tagLine;
-	document.querySelector(".banner-img").src = imagePath;
-	tagLine.innerHTML = taglineContent;
-
-	const dotSelected = bulletPoints.querySelector(".dot_selected");
-	const nextDot = bulletPoints.children[currentSlide];
-	dotSelected.classList.remove("dot_selected");
-	nextDot.classList.add("dot_selected");
+	updateSlide();
 });
 
 arrowRight.addEventListener("click", function() {
@@ -48,17 +39,7 @@ arrowRight.addEventListener("click", function() {
 	 } else { 	
     currentSlide ++;
 	}
-
-	const imagePath = "./assets/images/slideshow/" + slides[currentSlide].image;
-	const taglineContent = slides[currentSlide].tagLine;
-	document.querySelector(".banner-img").src = imagePath;
-	tagLine.innerHTML = taglineContent;
-
-	const dotSelected = bulletPoints.querySelector(".dot_selected");
-	const nextDot = bulletPoints.children[currentSlide];
-	dotSelected.classList.remove("dot_selected");
-	nextDot.classList.add("dot_selected");
-	
+	updateSlide();
 });
 
 for (let i = 0; i < slides.length; i++) {
@@ -70,4 +51,16 @@ for (let i = 0; i < slides.length; i++) {
 	}
 
 	bulletPoints.appendChild(dot);
+}
+
+function updateSlide() {
+	const imagePath = "./assets/images/slideshow/" + slides[currentSlide].image;
+	const taglineContent = slides[currentSlide].tagLine;
+	document.querySelector(".banner-img").src = imagePath;
+	tagLine.innerHTML = taglineContent;
+
+	const dotSelected = bulletPoints.querySelector(".dot_selected");
+	const nextDot = bulletPoints.children[currentSlide];
+	dotSelected.classList.remove("dot_selected");
+	nextDot.classList.add("dot_selected");
 }
