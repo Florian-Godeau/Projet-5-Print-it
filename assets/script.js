@@ -26,7 +26,7 @@ let currentSlide = 0;
 
 arrowLeft.addEventListener("click", function() {
 	if (currentSlide === 0) {
-		currentSlide = 3;
+		currentSlide = slides.length - 1;
 	} else {	
     currentSlide --;
 	}
@@ -43,7 +43,7 @@ arrowLeft.addEventListener("click", function() {
 });
 
 arrowRight.addEventListener("click", function() {
-	if (currentSlide === 3) {
+	if (currentSlide === slides.length - 1) {
 		currentSlide = 0;
 	 } else { 	
     currentSlide ++;
