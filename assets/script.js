@@ -25,20 +25,12 @@ const tagLine = document.querySelector("#banner p");
 let currentSlide = 0;
 
 arrowLeft.addEventListener("click", function() {
-	if (currentSlide === 0) {
-		currentSlide = slides.length - 1;
-	} else {	
-    currentSlide --;
-	}
+	currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
 	updateSlide();
 });
 
 arrowRight.addEventListener("click", function() {
-	if (currentSlide === slides.length - 1) {
-		currentSlide = 0;
-	 } else { 	
-    currentSlide ++;
-	}
+	currentSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
 	updateSlide();
 });
 
