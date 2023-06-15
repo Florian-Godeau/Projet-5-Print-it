@@ -24,14 +24,25 @@ const tagLine = document.querySelector("#banner p");
 
 let currentSlide = 0;
 
+function changeSlide(direction) {
+	console.log(direction);
+    switch (direction) {
+        case "left":
+            currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+            break;
+        case "right":
+            currentSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+            break;
+    }
+    updateSlide();
+}
+
 arrowLeft.addEventListener("click", function() {
-	currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
-	updateSlide();
+    changeSlide("left");
 });
 
 arrowRight.addEventListener("click", function() {
-	currentSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
-	updateSlide();
+    changeSlide("right");
 });
 
 for (let i = 0; i < slides.length; i++) {
