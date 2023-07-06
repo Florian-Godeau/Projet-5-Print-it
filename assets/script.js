@@ -25,7 +25,6 @@ const tagLine = document.querySelector("#banner p");
 let currentSlide = 0;
 
 function changeSlide(direction) {
-	console.log(direction);
     switch (direction) {
         case "left":
             currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
@@ -33,6 +32,9 @@ function changeSlide(direction) {
         case "right":
             currentSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
             break;
+		default:
+            console.error(`Invalid direction. Expected "left" or "right".`);
+            return; 
     }
     updateSlide();
 }
